@@ -5,7 +5,7 @@ og = Image.open("./256.png")
 pixels = og.load()
 
 brightness = 0
-contrast = -100
+contrast = 99
 
 if contrast < 0:
     multiply = contrast + 100
@@ -32,6 +32,13 @@ for i in range(og.size[0]):
             G = ClampToByte(colors[1] + shift) 
             B = ClampToByte(colors[2] + shift)
             og.putpixel((i, j), (R, G, B))
+        else:
+            shift = (intensity - 127 + brightness) * multiply / divide + 127 - intensity
+            R = ClampToByte(colors[0] + shift)
+            G = ClampToByte(colors[1] + shift) 
+            B = ClampToByte(colors[2] + shift)
+            og.putpixel((i, j), (R, G, B))
+
 
 og.show()
 
