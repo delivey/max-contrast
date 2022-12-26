@@ -12,4 +12,11 @@ contrast_image("./example.png", 0, 100, "./example-contrasted.png")
 
 # Example (Contrasting 100, Brightness 0)
 ![No filters applied](./examples/example.jpg)
-![Contrasting 100](./examples/example-contrasted.jpg)
+![Contrasting 100](./examples/example_contrasted100.jpg)
+
+# Example (Contrasting -100, Brightness 0)
+![No filters applied](./examples/example.jpg)
+![Contrasting 100](./examples/example_contrasted-100.jpg)
+
+# Credits
+Inspiration for the code has been taken from OpenPND: https://github.com/rivy/OpenPDN
