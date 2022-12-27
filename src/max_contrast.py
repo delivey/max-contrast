@@ -22,15 +22,12 @@ def contrast_image(image_path, brightness, contrast, save_path=False, show=False
     if brightness < -100: brightness = -100
     if brightness > 100: brightness = 100
 
-    if contrast < 0:
-        multiply = contrast + 100
-        divide = 100
-    elif contrast > 0:
+    if contrast > 0:
         multiply = 100
         divide = 100 - contrast
     else:
-        multiply = 1
-        divide = 1
+        multiply = contrast + 100
+        divide = 100
 
     for i in range(img.size[0]):
         for j in range(img.size[1]):
