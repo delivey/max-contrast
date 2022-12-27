@@ -1,19 +1,26 @@
 from PIL import Image
-from helpers import GetIntensityByte, ClampToByte
 
 def contrast_image(image_path, brightness, contrast, save_path=False, show=False):
+    # Returns: A value in the range 0 to 255 inclusive.
+    def GetIntensityByte(rgb):
+        return (7471 * rgb[2] + 38470 * rgb[1] + 19595 * rgb[0]) >> 16
+
+    # Returns: A normalized color between 0 to 255
+    def ClampToByte(x): 
+        if x > 255:
+            return 255
+        elif x < 0:
+            return 0
+        return int(x)
+
     img = Image.open(image_path)
     pixels = img.load()
 
-    if contrast < -100:
-        contrast = -100
-    if contrast > 100:
-        contrast = 100
+    if contrast < -100: contrast = -100
+    if contrast > 100: contrast = 100
 
-    if brightness < -100:
-        brightness = -100
-    if brightness > 100:
-        brightness = 100
+    if brightness < -100: brightness = -100
+    if brightness > 100: brightness = 100
 
     if contrast < 0:
         multiply = contrast + 100
