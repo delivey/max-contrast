@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="max-contrast",
-    version="0.0.1",
+    version="0.0.2",
     url="https://github.com/delivey/max-contrast",
     license="MIT",
     author="delivey",
