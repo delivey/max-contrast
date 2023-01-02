@@ -1,2 +1,2 @@
 Pillow==9.3.0
-setuptools==63.2.0
+setuptools==65.5.1
