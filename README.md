@@ -2,6 +2,11 @@
 
 Library which replicates the Paint.net contrast & brightness functionality in Python, allowing you to increase the contrast of an image until it turns B&W. 
 
+# Installation
+```python
+pip install max_contrast
+```
+
 # Usage
 ```python
 from max_contrast import contrast_image
